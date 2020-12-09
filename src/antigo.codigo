@@ -1,0 +1,41 @@
+#include <Arduino.h>
+#define A_MOTOR_PWM 5
+#define B_MOTOR_PWM 4
+#define A_MOTOR 0
+#define B_MOTOR 2
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(A_MOTOR_PWM, OUTPUT);
+  pinMode(B_MOTOR_PWM, OUTPUT);
+  pinMode(A_MOTOR, OUTPUT);
+  pinMode(B_MOTOR, OUTPUT);
+  Serial.println("ladies and gentlemen, start your engines!");
+  delay(1000);
+}
+
+void loop() {
+  Serial.println("Ligando motor A pra frente");
+  digitalWrite(A_MOTOR_PWM, HIGH);
+  digitalWrite(A_MOTOR,0); // pra frente
+  delay(3000);
+  Serial.println("Ligando motor A pra tras");
+  digitalWrite(A_MOTOR,1); // pra tras
+  delay(3000);
+
+  Serial.println("Desligando o motor A");
+  digitalWrite(A_MOTOR_PWM, LOW);
+
+  Serial.println("Ligando motor B pra frente");
+  digitalWrite(B_MOTOR_PWM, HIGH);
+  digitalWrite(B_MOTOR,0); // pra frente
+  delay(3000);
+  Serial.println("Ligando motor B pra tras");
+  digitalWrite(B_MOTOR,1); // pra tras
+  delay(3000);
+  Serial.println("Desligando o motor B");
+  digitalWrite(B_MOTOR_PWM, LOW);
+  delay(7000);
+  Serial.println("Restart!");
+}
