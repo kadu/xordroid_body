@@ -4,7 +4,7 @@
 #include <ArduinoOTA.h>
 
 const char* ssid = "kaduzius";
-const char* password = "umasenhabemlegal27";
+const char* password = "***";
 
 void setupOTA() {
   // Porta padrao do ESP8266 para OTA eh 8266 - Voce pode mudar ser quiser, mas deixe indicado!
